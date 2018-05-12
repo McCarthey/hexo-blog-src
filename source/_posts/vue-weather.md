@@ -10,3 +10,5 @@ tags:
 demo 地址=>[vue-weather](http://mccarthey.coding.me/weather)
 
 使用 vue-cli 的 webpack-simple 模板，github/coding pages 服务，jsonp 的方式调用心知天气的免费 api。
+
+现已经使用 axios 替换 jQuery 实现 api 的调用
