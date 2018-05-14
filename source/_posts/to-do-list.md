@@ -14,28 +14,28 @@ demo 地址=>[A-To-do-list](https://mccarthey.github.io/A-To-do-list)
 # localStorage 简介
 
 cookie 一直都是 Web 开发人员用来存储数据的有效工具，但是 cookie 存在的一些问题限制了它的应用范围：
-_ 读取 cookie 需要冗余的代码
-_ cookie 是 HTTP 的功能而不是浏览器的
-_ 浏览器限制了 cookie 的数量和大小(4KB)
-_ cookie 会过期
-因此 HTML5 引入了 Web 存储功能--本地存储(localStorage)和会话存储(sessionStorage)。localStorage 具有以下优点：
-_ 开发人员可以方便地设置、写入数据和读取数据
-_ 拥有 5MB(IE 中有 10MB)的超大存储空间
-_ localStorage 中的数据不会过期，永远有效，除非手动删除
-_ 键/值对的存储方式，简单方便
-具体使用方法可以参考[HTML5 Web 存储](http://www.w3school.com.cn/html5/html_5_webstorage.asp)，保证 5 分钟内就能学会 XD。
+
+* 读取 cookie 需要冗余的代码
+* cookie 是 HTTP 的功能而不是浏览器的
+* 浏览器限制了 cookie 的数量和大小(4KB)
+* cookie 会过期因此 HTML5 引入了 Web 存储功能--本地存储(localStorage)和会话存储(sessionStorage)。localStorage 具有以下优点：
+* 开发人员可以方便地设置、写入数据和读取数据
+* 拥有 5MB(IE 中有 10MB)的超大存储空间
+* localStorage 中的数据不会过期，永远有效，除非手动删除
+* 键/值对的存储方式，简单方便具体使用方法可以参考[HTML5 Web 存储](http://www.w3school.com.cn/html5/html_5_webstorage.asp)，保证 5 分钟内就能学会 XD。
 
 # 编程实现
 
 因为只是个很小的应用，所以我并未引用任何第三方库，都是用原生 js 来操作 dom 实现的，好处是文件都很小，不会出现几百 k 的怪物库；弊端就是操作 dom 频繁，性能会受到影响，但是影响不大。
 主要实现的功能：
-_ 新建事项
-_ 标记事项为完成/未完成状态
-_ 删除某事项
-_ 清空全部事项
-_ 事项置顶
-_ 动画优化 \* 移动端优化
-具体的代码可以到 github 库中查看下载[A-To-do-list Github](https://github.com/McCarthey/A-To-do-list)
+
+* 新建事项
+* 标记事项为完成/未完成状态
+* 删除某事项
+* 清空全部事项
+* 事项置顶
+* 动画优化
+* 移动端优化具体的代码可以到 github 库中查看下载[A-To-do-list Github](https://github.com/McCarthey/A-To-do-list)
 
 # 改造成 PWA
 
