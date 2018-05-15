@@ -13,3 +13,26 @@ tags:
 # 项目简介
 
 为了解决上一个[to-do-list](https://mccarthey.github.io/A-To-do-list)应用原生 js 操作 DOM 而引起的网页性能问题，也是为了向一个[Freelancer](https://www.freelancer.cn)上认识的日本小哥介绍一下 Vue 这个框架，决定写一个 Vue 版本的 todolist 来说明。
+
+# 编程实现
+
+不多说，先上代码，仓库地址=>[VueToDoList](https://github.com/McCarthey/VueToDoList)。
+
+整个代码库很简单，因为是使用 vue-cli 的 webpack-simple 模板构建的，因此几乎没有配置修改的余地（毕竟只是一个小应用，也没涉及到代理、接口）。代码基本都写在 App.vue 中。
+
+* 主要模板
+
+```
+<draggable v-model="myArray" @end="onDrop">
+        <!-- transition/animation https://vuefe.cn/v2/guide/transitions.html -->
+      <transition-group name="list">
+        <div v-for="(element,index) in myArray" :key="index" class="draggable-item">
+        <!-- A material design UI library for Vue.js, museUI  https://www.muse-ui.org -->
+          <mu-checkbox class="checkbox" v-model="element.done"/>
+          <mu-text-field v-model="element.text" hintText="写点儿什么吧" @blur="onSave" :disabled="element.done" :class="element.done? 'act-input-done': 'act-input' " />
+          <mu-icon-button icon="delete" @click="onDelete(index)" iconClass="icon-delete"/>
+          <!-- 是否需要多行文本 -->
+        </div>
+      </transition-group>
+    </draggable>
+```
