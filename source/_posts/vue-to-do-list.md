@@ -20,10 +20,10 @@ tags:
 
 整个代码库很简单，因为是使用 vue-cli 的 webpack-simple 模板构建的，因此几乎没有配置修改的余地（毕竟只是一个小应用，也没涉及到代理、接口）。代码基本都写在 App.vue 中。
 
-* 主要模板
+* 列表渲染模板
 
-```
-<draggable v-model="myArray" @end="onDrop">
+```html
+    <draggable v-model="myArray" @end="onDrop">
         <!-- transition/animation https://vuefe.cn/v2/guide/transitions.html -->
       <transition-group name="list">
         <div v-for="(element,index) in myArray" :key="index" class="draggable-item">
@@ -36,3 +36,5 @@ tags:
       </transition-group>
     </draggable>
 ```
+
+其中`v-for`循环渲染的`div`元素外层包裹了`<transition-group>`，用于展示元素的过渡动画（[可参考 vue 的官方文档](https://vuefe.cn/v2/guide/transitions.html#%E5%88%97%E8%A1%A8%E8%BF%87%E6%B8%A1)），因此这是可选的。而`<transition-group>`的外层又包裹了`<draggable>`元素，这里可参考[vuedraggable 的官方文档](https://www.npmjs.com/package/vuedraggable)
