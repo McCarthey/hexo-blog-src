@@ -62,3 +62,26 @@ tags:
 由于代码比较简单，就不贴出了，请直接在代码库里查看
 
 * 老数据迁移
+
+```javascript
+let listString = localStorage.getItem('mc_to_do_list')
+let list = JSON.parse(listString)
+// 老用户迁移 判断是数组还是对象
+if (Object.prototype.toString.call(list) === '[object Object]') {
+  let result = []
+  for (let k in list) {
+    let newItem = {}
+    // 取出id
+    newItem.id = Number(k.split('act')[1])
+    newItem.text = list[k]['taskName']
+    newItem.done = list[k]['taskDone']
+    result.push(newItem)
+  }
+  this.myArray = result || []
+} else {
+  this.myArray = list || []
+}
+console.log('读取localStorage中的内容', list)
+```
+
+可以看到，我在 created()生命周期中写了上面这一段，这样做是为了读取老版本的 to-do-list 的 localStorage 中的数据，老版本的是将对象转换成 JSON 字符串存储的，而该版本是将数组 JSON 字符串化存储的，因此需要做一个简单的数据转换，才能完成新老版本之间的数据迁移，让我的用户不至于因读取不了 localStorage 中的数据而一脸蒙。
