@@ -39,7 +39,7 @@ tags:
 
 其中`v-for`循环渲染的`div`元素外层包裹了`<transition-group>`，用于展示元素的过渡动画（[可参考 vue 的官方文档](https://vuefe.cn/v2/guide/transitions.html#%E5%88%97%E8%A1%A8%E8%BF%87%E6%B8%A1)），因此这是可选的。而`<transition-group>`的外层又包裹了`<draggable>`元素，这里可参考[vuedraggable 的官方文档](https://www.npmjs.com/package/vuedraggable)。引入 vuedraggable 后列表元素就变成了可拖拽的，而不仅仅是之前版本的置顶操作（PS：其实这个需求是应女票要求加上的，没错，她是我这个小应用的忠实用户 :D ）。
 
-* 列表操作
+* 操作按钮
 
 ```html
     <div class="op-btn_group">
@@ -52,3 +52,8 @@ tags:
       </div>
     </div>
 ```
+
+然后是三个功能按钮，分别触发三种不同的事件:
+
+* 新建事件：在列表数组尾部添加一个对象元素
+* 保存事件：将列表数组 JSON 字符串化，存入到 localStorage 中（键名依然是'mc_to_do_list'，数据的迁移下文会讲）
