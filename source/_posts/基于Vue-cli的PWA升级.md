@@ -6,3 +6,4 @@ tags:
 - PWA
 ---
 
+webpack配合插件：sw ,offline
