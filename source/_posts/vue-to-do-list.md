@@ -1,6 +1,6 @@
 ---
 layout: post
-title: vue实践（二）———— VueToDoList
+title: vue小应用（二）———— VueToDoList
 date: 2018-05-14 23:53:47
 tags:
 - vue
